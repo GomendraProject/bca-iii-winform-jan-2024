@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCA_III_jan_2024.Models;
+using BCA_III_jan_2024.Providers;
+using Dapper;
 
 namespace BCA_III_jan_2024
 {
@@ -43,16 +46,43 @@ namespace BCA_III_jan_2024
                 MessageBox.Show("Please input password");
             }
 
-            if(username == "hola" &&  password == "admin")
+            using (var conn = ConnectionProvider.GetConnection())
             {
-                var dashboardForm = new Dashboard();
-                this.Hide();
-                dashboardForm.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Invalid username/password");
+                var dataCountQuery = @"
+SELECT count(*) FROM app_user WHERE Username = @usernamed AND Password = @passwordd
+";
+                
+                // Single Data
+                // conn.QueryFirstOrDefault<>()
+                
+                // List of data
+                // conn.Query<int>()
+                
+                // No Return: INSERT UPDATE DELETE
+                // conn.Execute()
+                
+                var dataCount = conn.QueryFirstOrDefault<int>(dataCountQuery, new
+                {
+                    usernamed = username,
+                    passwordd = password
+                });
+
+                var itemListQuery = @"
+select * from app_user
+";
+                var userList = conn.Query<AppUser>(itemListQuery, new { });
+                
+                if(dataCount > 0)
+                {
+                    var dashboardForm = new Dashboard();
+                    this.Hide();
+                    dashboardForm.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username/password");
+                }
             }
         }
     }
