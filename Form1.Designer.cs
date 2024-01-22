@@ -33,6 +33,7 @@
             this.passwordElm = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.loginElm = new System.Windows.Forms.Button();
+            this.registerElm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usernameLbl
@@ -40,7 +41,7 @@
             this.usernameLbl.AutoSize = true;
             this.usernameLbl.Location = new System.Drawing.Point(34, 23);
             this.usernameLbl.Name = "usernameLbl";
-            this.usernameLbl.Size = new System.Drawing.Size(70, 16);
+            this.usernameLbl.Size = new System.Drawing.Size(73, 17);
             this.usernameLbl.TabIndex = 0;
             this.usernameLbl.Text = "Username";
             // 
@@ -64,7 +65,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(34, 97);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 16);
+            this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Password";
             // 
@@ -77,11 +78,21 @@
             this.loginElm.Text = "Login!";
             this.loginElm.UseVisualStyleBackColor = true;
             // 
+            // registerElm
+            // 
+            this.registerElm.Location = new System.Drawing.Point(124, 250);
+            this.registerElm.Name = "registerElm";
+            this.registerElm.Size = new System.Drawing.Size(209, 30);
+            this.registerElm.TabIndex = 5;
+            this.registerElm.Text = "Register Now!";
+            this.registerElm.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 528);
+            this.Controls.Add(this.registerElm);
             this.Controls.Add(this.loginElm);
             this.Controls.Add(this.passwordElm);
             this.Controls.Add(this.label1);
@@ -91,8 +102,9 @@
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
+
+        private System.Windows.Forms.Button registerElm;
 
         #endregion
 

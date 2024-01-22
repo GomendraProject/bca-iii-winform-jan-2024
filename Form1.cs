@@ -30,6 +30,15 @@ namespace BCA_III_jan_2024
         private void AttachEventHandlers()
         {
             loginElm.Click += LoginElm_Click;
+            registerElm.Click += RegisterElmOnClick;
+        }
+
+        private void RegisterElmOnClick(object sender, EventArgs e)
+        {
+            var registerForm = new UserRegistrationForm();
+            this.Hide();
+            registerForm.ShowDialog();
+            this.Show();
         }
 
         private void LoginElm_Click(object sender, EventArgs e)
@@ -66,11 +75,6 @@ SELECT count(*) FROM app_user WHERE Username = @usernamed AND Password = @passwo
                     usernamed = username,
                     passwordd = password
                 });
-
-                var itemListQuery = @"
-select * from app_user
-";
-                var userList = conn.Query<AppUser>(itemListQuery, new { });
                 
                 if(dataCount > 0)
                 {

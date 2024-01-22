@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userListElm = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.userListElm)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // userListElm
             // 
-            this.textBox1.Location = new System.Drawing.Point(146, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(504, 22);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "YOU ARE LOGGED IN";
+            this.userListElm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userListElm.Location = new System.Drawing.Point(10, 73);
+            this.userListElm.Name = "userListElm";
+            this.userListElm.RowTemplate.Height = 24;
+            this.userListElm.Size = new System.Drawing.Size(781, 309);
+            this.userListElm.TabIndex = 0;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.userListElm);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            ((System.ComponentModel.ISupportInitialize)(this.userListElm)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
-
         }
 
-        #endregion
+        private System.Windows.Forms.DataGridView userListElm;
 
-        private System.Windows.Forms.TextBox textBox1;
+        #endregion
     }
 }
