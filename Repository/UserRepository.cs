@@ -21,5 +21,19 @@ select * from app_user
                 return userList.AsList();
             }
         }
+
+        public static AppUser GetUserByUsername(string username)
+        {
+            using (var conn = ConnectionProvider.GetConnection())
+            {
+                var userQuery = @"
+select * from app_user WHERE Username = @username
+";
+                return conn.QueryFirstOrDefault<AppUser>(userQuery, new
+                {
+                    username = username
+                });
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BCA_III_jan_2024.Models;
 using BCA_III_jan_2024.Providers;
+using BCA_III_jan_2024.Repository;
 using Dapper;
 
 namespace BCA_III_jan_2024
@@ -75,12 +76,15 @@ SELECT count(*) FROM app_user WHERE Username = @usernamed AND Password = @passwo
                     usernamed = username,
                     passwordd = password
                 });
+
+                Session.CurrentUser = UserRepository.GetUserByUsername(username);
                 
                 if(dataCount > 0)
                 {
                     var dashboardForm = new Dashboard();
                     this.Hide();
                     dashboardForm.ShowDialog();
+                    Session.CurrentUser = null;
                     this.Show();
                 }
                 else
