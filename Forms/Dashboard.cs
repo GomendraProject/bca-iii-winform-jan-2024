@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using BCA_III_jan_2024.Forms.IssueForms;
 using BCA_III_jan_2024.Models;
 using BCA_III_jan_2024.Providers;
 using Dapper;
@@ -19,7 +20,16 @@ namespace BCA_III_jan_2024.Forms
         private void OnLoad(object sender, EventArgs e)
         {
             userListElm.DataSource = _bindingUserList;
+            noticeFormElm.Click += NoticeFormElmOnClick;
             this.PopulateUserData();
+        }
+
+        private void NoticeFormElmOnClick(object sender, EventArgs e)
+        {
+            var form = new IssueForm();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
 
         private void PopulateUserData()

@@ -88,6 +88,18 @@
     <Compile Include="Forms\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\IssueForms\IssueAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IssueForms\IssueAddForm.Designer.cs">
+      <DependentUpon>IssueAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IssueForms\IssueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IssueForms\IssueForm.Designer.cs">
+      <DependentUpon>IssueForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserRegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,14 +107,22 @@
       <DependentUpon>UserRegistrationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AppUser.cs" />
+    <Compile Include="Models\IssueModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ConnectionProvider.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IssueForms\IssueAddForm.resx">
+      <DependentUpon>IssueAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IssueForms\IssueForm.resx">
+      <DependentUpon>IssueForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserRegistrationForm.resx">
       <DependentUpon>UserRegistrationForm.cs</DependentUpon>

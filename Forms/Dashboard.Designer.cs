@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.userListElm = new System.Windows.Forms.DataGridView();
+            this.noticeFormElm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.userListElm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,17 +42,29 @@
             this.userListElm.Size = new System.Drawing.Size(781, 309);
             this.userListElm.TabIndex = 0;
             // 
+            // noticeFormElm
+            // 
+            this.noticeFormElm.Location = new System.Drawing.Point(613, 7);
+            this.noticeFormElm.Name = "noticeFormElm";
+            this.noticeFormElm.Size = new System.Drawing.Size(177, 57);
+            this.noticeFormElm.TabIndex = 1;
+            this.noticeFormElm.Text = "Notice Manager";
+            this.noticeFormElm.UseVisualStyleBackColor = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.noticeFormElm);
             this.Controls.Add(this.userListElm);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             ((System.ComponentModel.ISupportInitialize)(this.userListElm)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button noticeFormElm;
 
         private System.Windows.Forms.DataGridView userListElm;
 
